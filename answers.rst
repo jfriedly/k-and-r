@@ -71,3 +71,9 @@ One gets warnings about unknown escape sequences for most of them, errors for ``
 1-11
 ----
 I'd test it by hitting it with every corner case I could think of:  empty input, input consisting solely of sequences of newlines, spaces, and tab characters, and input containing sequences like that.
+
+1-12
+----
+.. code:: bash
+
+    git checkout 1-12; cc -Wall -std=c99 src/word-per-line.c -o build/word-per-line
