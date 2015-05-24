@@ -55,3 +55,9 @@ One gets warnings about unknown escape sequences for most of them, errors for ``
 .. code:: bash
 
     git checkout 1-8; cc -Wall -std=c99 src/whitespace-count.c -o build/whitespace-count.c
+
+1-9
+---
+.. code:: bash
+
+    git checkout 1-9; cc -Wall -std=c99 src/whitespace-normalizer.c -o build/whitespace-normalizer
