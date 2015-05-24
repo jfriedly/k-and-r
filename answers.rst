@@ -77,3 +77,11 @@ I'd test it by hitting it with every corner case I could think of:  empty input,
 .. code:: bash
 
     git checkout 1-12; cc -Wall -std=c99 src/word-per-line.c -o build/word-per-line
+
+1-13
+----
+I implemented both the horizontal and vertical versions; swap them out at the bottom of ``main`` to see.
+
+.. code:: bash
+
+    git checkout 1-13; cc -Wall -std=c99 src/word-length.c -o build/word-length
