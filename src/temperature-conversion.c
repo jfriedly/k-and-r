@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+float convert(float celsius)
+{
+	return 1.8 * celsius + 32;
+}
+
 /* print Fahrenheit-Celsius table for 0, 20, ... 300F; floating-point version*/
 int main(int argc, char **argv)
 {
@@ -13,7 +18,7 @@ int main(int argc, char **argv)
 	printf("--------------------\n");
 	celsius = upper;
 	while (celsius >= lower) {
-		fahr = (9.0 / 5.0) * celsius + 32.0;
+		fahr = convert(celsius);
 		printf("%-10.0f   %-7.1f\n", fahr, celsius);
 		celsius = celsius - step;
 	}

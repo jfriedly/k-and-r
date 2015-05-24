@@ -94,3 +94,9 @@ I moved the histogram functions into a separate file with a header and included 
 .. code:: bash
 
     git checkout 1-14; cc -Wall -std=c99 src/char-freq.c src/histogram.c -o build/char-freq 
+
+1-15
+----
+.. code:: bash
+
+    git checkout 1-15; cc -Wall -std=c99 src/temperature-conversion.c -o build/temperature-conversion
