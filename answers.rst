@@ -33,3 +33,9 @@ One gets warnings about unknown escape sequences for most of them, errors for ``
 .. code:: bash
 
     git checkout 1-4; cc -Wall -std=c99 src/temperature-conversion.c -o build/temperature-conversion
+
+1-5
+---
+.. code:: bash
+
+    git checkout 1-5; cc -Wall -std=c99 src/temperature-conversion.c -o build/temperature-conversion
