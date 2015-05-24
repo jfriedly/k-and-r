@@ -106,3 +106,9 @@ I moved the histogram functions into a separate file with a header and included 
 .. code:: bash
 
     git checkout 1-16; cc -Wall -std=c99 src/longest-line.c -o build/longest-line
+
+1-17
+----
+.. code:: bash
+
+    git checkout 1-17; cc -Wall -std=c99 src/too-long.c -o build/too-long
