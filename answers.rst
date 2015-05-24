@@ -61,3 +61,9 @@ One gets warnings about unknown escape sequences for most of them, errors for ``
 .. code:: bash
 
     git checkout 1-9; cc -Wall -std=c99 src/whitespace-normalizer.c -o build/whitespace-normalizer
+
+1-10
+----
+.. code:: bash
+
+    git checkout 1-10; cc -Wall -std=c99 src/backslasher.c -o build/backslasher
