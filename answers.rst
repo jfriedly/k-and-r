@@ -43,3 +43,9 @@ One gets warnings about unknown escape sequences for most of them, errors for ``
 1-6
 ---
 ``getchar() != EOF`` is a boolean expression, so by definition it must evaluate to either 0 or 1.
+
+1-7
+---
+.. code:: bash
+
+    git checkout 1-7; cc -Wall -std=c99 src/print-eof.c -o build/print-eof.c
