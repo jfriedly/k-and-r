@@ -8,6 +8,7 @@ It still works if you leave out the return statement (which I only added to sile
 
 .. code:: bash
 
+    mkdir -p build
     git checkout 1-1; cc -Wall -std=c99 src/hello-world.c -o build/hello-world
 
 1-2
@@ -84,4 +85,12 @@ I implemented both the horizontal and vertical versions; swap them out at the bo
 
 .. code:: bash
 
-    git checkout 1-13; cc -Wall -std=c99 src/word-length.c -o build/word-length
+    git checkout 1-13; cc -Wall -std=c99 src/word-length.c src/histogram.c -o build/word-length 
+
+1-14
+----
+I moved the histogram functions into a separate file with a header and included it.
+
+.. code:: bash
+
+    git checkout 1-14; cc -Wall -std=c99 src/char-freq.c src/histogram.c -o build/char-freq 
