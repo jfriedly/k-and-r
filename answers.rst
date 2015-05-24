@@ -118,3 +118,9 @@ I moved the histogram functions into a separate file with a header and included 
 .. code:: bash
 
     git checkout 1-18; cc -Wall -std=c99 src/trailing-whitespace.c -o build/trailing-whitespace
+
+1-19
+----
+.. code:: bash
+
+    git checkout 1-19; cc -Wall -std=c99 src/reverse.c -o build/reverse
