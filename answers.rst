@@ -124,3 +124,12 @@ I moved the histogram functions into a separate file with a header and included 
 .. code:: bash
 
     git checkout 1-19; cc -Wall -std=c99 src/reverse.c -o build/reverse
+
+1-20
+----
+I believe that the number of spaces per tab should be a variable, because it would be nice to make it runtime configurable.
+This version doesn't support that though.
+
+.. code:: bash
+
+    git checkout 1-20; cc -Wall -std=c99 src/detab.c -o build/detab
