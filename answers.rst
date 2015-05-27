@@ -133,3 +133,11 @@ This version doesn't support that though.
 .. code:: bash
 
     git checkout 1-20; cc -Wall -std=c99 src/detab.c -o build/detab
+
+1-21
+----
+When either a tab or a space would work, I'd prefer to use a space character, because that removes any ambiguity about what a single-character blank could be.
+
+.. code:: bash
+
+    git checkout 1-21; cc -Wall -std=c99 src/entab.c -o build/entab
