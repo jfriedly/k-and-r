@@ -85,7 +85,8 @@ I implemented both the horizontal and vertical versions; swap them out at the bo
 
 .. code:: bash
 
-    git checkout 1-13; cc -Wall -std=c99 src/word-length.c src/histogram.c src/common.c -o build/word-length 
+    git checkout 1-13; cc -Wall -std=c99 src/word-length.c src/histogram.c -o build/word-length 
+    git checkout 1-21; cc -Wall -std=c99 src/word-length.c src/histogram.c src/common.c -o build/word-length 
 
 1-14
 ----
@@ -93,7 +94,8 @@ I moved the histogram functions into a separate file with a header and included 
 
 .. code:: bash
 
-    git checkout 1-14; cc -Wall -std=c99 src/char-freq.c src/histogram.c src/common.c -o build/char-freq 
+    git checkout 1-14; cc -Wall -std=c99 src/char-freq.c src/histogram.c -o build/char-freq 
+    git checkout 1-21; cc -Wall -std=c99 src/char-freq.c src/histogram.c src/common.c -o build/char-freq 
 
 1-15
 ----
@@ -118,6 +120,7 @@ I moved the histogram functions into a separate file with a header and included 
 .. code:: bash
 
     git checkout 1-18; cc -Wall -std=c99 src/trailing-whitespace.c -o build/trailing-whitespace
+    git checkout 1-21; cc -Wall -std=c99 src/trailing-whitespace.c src/common.c -o build/trailing-whitespace
 
 1-19
 ----
@@ -133,11 +136,14 @@ This version doesn't support that though.
 .. code:: bash
 
     git checkout 1-20; cc -Wall -std=c99 src/detab.c -o build/detab
+    git checkout 1-21; cc -Wall -std=c99 src/detab.c src/common.c -o build/detab
 
 1-21
 ----
 When either a tab or a space would work, I'd prefer to use a space character, because that removes any ambiguity about what a single-character blank could be.
 
+I refactored the while loop that I'd been using everywhere into the common header.
+
 .. code:: bash
 
-    git checkout 1-21; cc -Wall -std=c99 src/entab.c -o build/entab
+    git checkout 1-21; cc -Wall -std=c99 src/entab.c src/common.c -o build/entab

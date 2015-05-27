@@ -10,3 +10,10 @@ unsigned int u_max(unsigned int counts[], unsigned int array_length)
 	return max;
 }
 
+void apply_lines(int max_length, FILE *f, void (*func)(char *line))
+{
+	char line[max_length];
+
+	while (fgets(line, max_length, f) != NULL)
+		func(line);
+}
