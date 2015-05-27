@@ -85,7 +85,7 @@ I implemented both the horizontal and vertical versions; swap them out at the bo
 
 .. code:: bash
 
-    git checkout 1-13; cc -Wall -std=c99 src/word-length.c src/histogram.c -o build/word-length 
+    git checkout 1-13; cc -Wall -std=c99 src/word-length.c src/histogram.c src/common.c -o build/word-length 
 
 1-14
 ----
@@ -93,7 +93,7 @@ I moved the histogram functions into a separate file with a header and included 
 
 .. code:: bash
 
-    git checkout 1-14; cc -Wall -std=c99 src/char-freq.c src/histogram.c -o build/char-freq 
+    git checkout 1-14; cc -Wall -std=c99 src/char-freq.c src/histogram.c src/common.c -o build/char-freq 
 
 1-15
 ----
