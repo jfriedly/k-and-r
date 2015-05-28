@@ -147,3 +147,9 @@ I refactored the while loop that I'd been using everywhere into the common heade
 .. code:: bash
 
     git checkout 1-21; cc -Wall -std=c99 src/entab.c src/common.c -o build/entab
+
+1-22
+----
+.. code:: bash
+
+    git checkout 1-22; cc -Wall -std=c99 src/fold.c src/common.c -o build/fold
