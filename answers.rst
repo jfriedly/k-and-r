@@ -153,3 +153,9 @@ I refactored the while loop that I'd been using everywhere into the common heade
 .. code:: bash
 
     git checkout 1-22; cc -Wall -std=c99 src/fold.c src/common.c -o build/fold
+
+1-23
+----
+.. code:: bash
+
+    git checkout 1-23; cc -Wall -Wno-unused-variable -std=c99 src/comment-stripper.c src/common.c -o build/comment-stripper
