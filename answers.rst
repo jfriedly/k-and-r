@@ -9,7 +9,7 @@ It still works if you leave out the return statement (which I only added to sile
 .. code:: bash
 
     mkdir -p build
-    git checkout 1-1; cc -Wall -std=c99 src/hello-world.c -o build/hello-world
+    git checkout 1-1; cc -std=c99 -Wall -o build/hello-world src/hello-world.c
 
 1-2
 ---
@@ -21,25 +21,25 @@ One gets warnings about unknown escape sequences for most of them, errors for ``
 
 .. code:: bash
 
-    git checkout 1-2; cc -Wall -std=c99 src/hello-world.c -o build/hello-world
+    git checkout 1-2; cc -std=c99 -Wall -o build/hello-world src/hello-world.c
 
 1-3
 ---
 .. code:: bash
 
-    git checkout 1-3; cc -Wall -std=c99 src/temperature-conversion.c -o build/temperature-conversion
+    git checkout 1-3; cc -std=c99 -Wall -o build/temperature-conversion src/temperature-conversion.c
 
 1-4
 ---
 .. code:: bash
 
-    git checkout 1-4; cc -Wall -std=c99 src/temperature-conversion.c -o build/temperature-conversion
+    git checkout 1-4; cc -std=c99 -Wall -o build/temperature-conversion src/temperature-conversion.c
 
 1-5
 ---
 .. code:: bash
 
-    git checkout 1-5; cc -Wall -std=c99 src/temperature-conversion.c -o build/temperature-conversion
+    git checkout 1-5; cc -std=c99 -Wall -o build/temperature-conversion src/temperature-conversion.c
 
 1-6
 ---
@@ -49,25 +49,25 @@ One gets warnings about unknown escape sequences for most of them, errors for ``
 ---
 .. code:: bash
 
-    git checkout 1-7; cc -Wall -std=c99 src/print-eof.c -o build/print-eof.c
+    git checkout 1-7; cc -std=c99 -Wall -o build/print-eof.c src/print-eof.c
 
 1-8
 ---
 .. code:: bash
 
-    git checkout 1-8; cc -Wall -std=c99 src/whitespace-count.c -o build/whitespace-count.c
+    git checkout 1-8; cc -std=c99 -Wall -o build/whitespace-count.c src/whitespace-count.c
 
 1-9
 ---
 .. code:: bash
 
-    git checkout 1-9; cc -Wall -std=c99 src/whitespace-normalizer.c -o build/whitespace-normalizer
+    git checkout 1-9; cc -std=c99 -Wall -o build/whitespace-normalizer src/whitespace-normalizer.c
 
 1-10
 ----
 .. code:: bash
 
-    git checkout 1-10; cc -Wall -std=c99 src/backslasher.c -o build/backslasher
+    git checkout 1-10; cc -std=c99 -Wall -o build/backslasher src/backslasher.c
 
 1-11
 ----
@@ -77,7 +77,7 @@ I'd test it by hitting it with every corner case I could think of:  empty input,
 ----
 .. code:: bash
 
-    git checkout 1-12; cc -Wall -std=c99 src/word-per-line.c -o build/word-per-line
+    git checkout 1-12; cc -std=c99 -Wall -o build/word-per-line src/word-per-line.c
 
 1-13
 ----
@@ -85,8 +85,8 @@ I implemented both the horizontal and vertical versions; swap them out at the bo
 
 .. code:: bash
 
-    git checkout 1-13; cc -Wall -std=c99 src/word-length.c src/histogram.c -o build/word-length 
-    git checkout 1-21; cc -Wall -std=c99 src/word-length.c src/histogram.c src/common.c -o build/word-length 
+    git checkout 1-13; cc -std=c99 -Wall -o build/word-length src/word-length.c src/histogram.c
+    git checkout 1-21; cc -std=c99 -Wall -o build/word-length src/word-length.c src/histogram.c src/common.c
 
 1-14
 ----
@@ -94,39 +94,39 @@ I moved the histogram functions into a separate file with a header and included 
 
 .. code:: bash
 
-    git checkout 1-14; cc -Wall -std=c99 src/char-freq.c src/histogram.c -o build/char-freq 
-    git checkout 1-21; cc -Wall -std=c99 src/char-freq.c src/histogram.c src/common.c -o build/char-freq 
+    git checkout 1-14; cc -std=c99 -Wall -o build/char-freq src/char-freq.c src/histogram.c
+    git checkout 1-21; cc -std=c99 -Wall -o build/char-freq src/char-freq.c src/histogram.c src/common.c 
 
 1-15
 ----
 .. code:: bash
 
-    git checkout 1-15; cc -Wall -std=c99 src/temperature-conversion.c -o build/temperature-conversion
+    git checkout 1-15; cc -std=c99 -Wall -o build/temperature-conversion src/temperature-conversion.c
 
 1-16
 ----
 .. code:: bash
 
-    git checkout 1-16; cc -Wall -std=c99 src/longest-line.c -o build/longest-line
+    git checkout 1-16; cc -std=c99 -Wall -o build/longest-line src/longest-line.c
 
 1-17
 ----
 .. code:: bash
 
-    git checkout 1-17; cc -Wall -std=c99 src/too-long.c -o build/too-long
+    git checkout 1-17; cc -std=c99 -Wall -o build/too-long src/too-long.c
 
 1-18
 ----
 .. code:: bash
 
-    git checkout 1-18; cc -Wall -std=c99 src/trailing-whitespace.c -o build/trailing-whitespace
-    git checkout 1-21; cc -Wall -std=c99 src/trailing-whitespace.c src/common.c -o build/trailing-whitespace
+    git checkout 1-18; cc -std=c99 -Wall -o build/trailing-whitespace src/trailing-whitespace.c
+    git checkout 1-21; cc -std=c99 -Wall -o build/trailing-whitespace src/trailing-whitespace.c src/common.c
 
 1-19
 ----
 .. code:: bash
 
-    git checkout 1-19; cc -Wall -std=c99 src/reverse.c -o build/reverse
+    git checkout 1-19; cc -std=c99 -Wall -o build/reverse src/reverse.c
 
 1-20
 ----
@@ -135,36 +135,36 @@ This version doesn't support that though.
 
 .. code:: bash
 
-    git checkout 1-20; cc -Wall -std=c99 src/detab.c -o build/detab
-    git checkout 1-21; cc -Wall -std=c99 src/detab.c src/common.c -o build/detab
+    git checkout 1-20; cc -std=c99 -Wall -o build/detab src/detab.c
+    git checkout 1-21; cc -std=c99 -Wall -o build/detab src/detab.c src/common.c
 
 1-21
 ----
 When either a tab or a space would work, I'd prefer to use a space character, because that removes any ambiguity about what a single-character blank could be.
 
-I refactored the while loop that I'd been using everywhere into the common header.
+I refactored the while loop that I'd been using everywhere into the common header and added compilation commands for earlier exercises to use it.
 
 .. code:: bash
 
-    git checkout 1-21; cc -Wall -std=c99 src/entab.c src/common.c -o build/entab
+    git checkout 1-21; cc -std=c99 -Wall -o build/entab src/entab.c src/common.c
 
 1-22
 ----
 .. code:: bash
 
-    git checkout 1-22; cc -Wall -std=c99 src/fold.c src/common.c -o build/fold
+    git checkout 1-22; cc -std=c99 -Wall -o build/fold src/fold.c src/common.c
 
 1-23
 ----
 .. code:: bash
 
-    git checkout 1-23; cc -Wall -Wno-unused-variable -std=c99 src/comment-stripper.c src/common.c -o build/comment-stripper
+    git checkout 1-23; cc -std=c99 -Wall -Wno-unused-variable -o build/comment-stripper src/comment-stripper.c src/common.c
 
 1-24
 ----
 .. code:: bash
 
-    git checkout 1-24; cc -Wall -std=c99 src/syntax-checker.c src/common.c -o build/syntax-checker
+    git checkout 1-24; cc -std=c99 -Wall -o build/syntax-checker src/syntax-checker.c src/common.c
 
 2-1
 ---
@@ -180,4 +180,4 @@ Note, the location of the link argument to ``cc`` matters and the command below 
 
 .. code:: bash
 
-    git checkout 1-25; cc -std=c99 -Wall -Wno-incompatible-pointer-types src/limits.c -lm -o build/limits
+    git checkout 1-25; cc -std=c99 -Wall -Wno-incompatible-pointer-types -o build/limits src/limits.c -lm
