@@ -181,3 +181,27 @@ Note, the location of the link argument to ``cc`` matters and the command below 
 .. code:: bash
 
     git checkout 1-25; cc -std=c99 -Wall -Wno-incompatible-pointer-types -o build/limits src/limits.c -lm
+
+2-2
+---
+I tested this by replacing the for loop inside ``getline`` in ``longest-line.c`` (exercise 1-16).
+The need for ``break`` statements caught me off-guard.
+
+.. code:: c
+
+    #define MAXLINE 1000
+
+    char s[MAXLINE];
+    int lim = MAXLINE;
+    int c;
+    for (i = 0; i < lim - 1; ++i) {
+        if ((c = getchar()) != '\n') {
+            if (c != EOF) {
+                s[i] = c;
+            } else {
+                break;
+            }
+        } else {
+            break;
+        }
+    }
