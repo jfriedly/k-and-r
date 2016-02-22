@@ -165,3 +165,19 @@ I refactored the while loop that I'd been using everywhere into the common heade
 .. code:: bash
 
     git checkout 1-24; cc -Wall -std=c99 src/syntax-checker.c src/common.c -o build/syntax-checker
+
+2-1
+---
+For the floating point values, the headers contained the minimum *normalized* value for each type.
+Normalized floating point numbers are ones that can be expressed with a stable, discrete difference between two consecutive values.
+When the numbers get too close to zero, however, *denormal* or *subnormal* values are expressed, where the difference between two consecutive expressible values varies and the precision falls off.
+I went ahead and attempted to calculate the *normal* minimums.
+
+I was, however, unable to come up with any arithmetic way of calculating these, and had to resort to reading the Wikipedia pages for the floating point specifications.
+By reading those pages, I was able to write out the hex values of the smallest normalized and largest floating point numbers, and then print these.
+
+Note, the location of the link argument to ``cc`` matters and the command below works.
+
+.. code:: bash
+
+    git checkout 1-25; cc -std=c99 -Wall -Wno-incompatible-pointer-types src/limits.c -lm -o build/limits
