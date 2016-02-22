@@ -205,3 +205,9 @@ The need for ``break`` statements caught me off-guard.
             break;
         }
     }
+
+2-3
+---
+.. code:: bash
+
+    git checkout 2-3; cc -std=c99 -Wall -o build/htoi src/htoi.c src/common.c
