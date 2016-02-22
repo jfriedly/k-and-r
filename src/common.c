@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "common.h"
 
@@ -11,6 +12,23 @@ unsigned int u_max(unsigned int counts[], unsigned int array_length)
 	}
 	return max;
 }
+
+char *strip_trailing_whitespace(char *line)
+{
+	int i;
+	int len = 0;
+
+	len = strlen(line);
+	for (i = len - 2; i > -1; i--) {
+		if (line[i] != ' ' && line[i] != '\t')
+			break;
+	}
+	if (i < 0)
+		return NULL;
+	line[++i] = '\0';
+	return line;
+}
+
 
 void apply_lines(int max_length, FILE *f, void (*func)(char *line))
 {

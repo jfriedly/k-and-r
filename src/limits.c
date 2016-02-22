@@ -116,8 +116,8 @@ void print_calculated()
          *
          * The rest of the bits form the *significand*, the part after the
          * decimal point.  They're implemented as iterative negative powers
-         * of two, so fractions >= 1/2 will have the first bit set, fractions 
-         * >= 3/4 will also have the second bit set, fractions >= 7/8 will 
+         * of two, so fractions >= 1/2 will have the first bit set, fractions
+         * >= 3/4 will also have the second bit set, fractions >= 7/8 will
          * also have the third bit set, etc.
          *
          * The smallest normalized floating point number will have a mantissa
