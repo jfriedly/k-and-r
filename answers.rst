@@ -166,6 +166,10 @@ I refactored the while loop that I'd been using everywhere into the common heade
 
     git checkout 1-24; cc -std=c99 -Wall -o build/syntax-checker src/syntax-checker.c src/common.c
 
+
+Chapter 2
+=========
+
 2-1
 ---
 For the floating point values, the headers contained the minimum *normalized* value for each type.
