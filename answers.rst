@@ -215,3 +215,28 @@ The need for ``break`` statements caught me off-guard.
 .. code:: bash
 
     git checkout 2-3; cc -std=c99 -Wall -o build/htoi src/htoi.c src/common.c
+
+2-4
+---
+I tested this by writing a program for it.
+The need to write the new null character to the end of ``s1`` after every iteration of the outer loop caught me off-guard.
+Note:  this program acts on its arguments rather than ``stdin``.
+
+.. code:: bash
+
+    git checkout 2-4; cc -std=c99 -Wall -o build/squeeze src/squeeze.c
+
+.. code:: c
+
+    void squeeze(char s1[], char s2[])
+    {
+        int i, j, k;
+
+        for (i = 0; s2[i] != '\0'; i++) {
+            for (j = k = 0; s1[j] != '\0'; j++) {
+                if (s1[j] != s2[i])
+                    s1[k++] = s1[j];
+            }
+            s1[k] = '\0';
+        }
+    }
