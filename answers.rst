@@ -240,3 +240,26 @@ Note:  this program acts on its arguments rather than ``stdin``.
             s1[k] = '\0';
         }
     }
+
+2-5
+---
+I tested this by writing a program for it.
+Note:  this program acts on its arguments rather than ``stdin``.
+
+.. code:: bash
+
+    git checkout 2-5; cc -std=c99 -Wall -o build/any src/any.c
+
+.. code:: c
+
+    
+    int any(char s1[], char s2[])
+    {
+        for (int i = 0; s1[i] != '\0'; i++) {
+            for (int j = 0; s2[j] != '\0'; j++) {
+                if (s1[i] == s2[j])
+                    return i;
+            }
+        }
+        return -1;
+    }
