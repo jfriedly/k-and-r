@@ -263,3 +263,38 @@ Note:  this program acts on its arguments rather than ``stdin``.
         }
         return -1;
     }
+
+2-6
+---
+I tested this and the next two programs with a `bitshifting` program.
+
+.. code:: bash
+
+    git checkout 2-6; cc -std=c99 -Wall -o build/bitshifting src/bitshifting.c
+
+.. code:: c
+
+    unsigned long p_to_n_bitmask(short p, short n)
+    {
+        if (n == 0)
+            return 0L;
+        unsigned long mask = 0xffffffffffffffff;
+        mask <<= (8 * sizeof(long) - p - 1);
+        mask >>= (8 * sizeof(long) - p - 1);
+        mask >>= (p + 1 - n);
+        mask <<= (p + 1 - n);
+        return mask;
+    }
+
+    unsigned long setbits(unsigned long x, short p, short n, unsigned long y)
+    {
+        unsigned long mask = p_to_n_bitmask(p, n);
+        mask <<= (8 * sizeof(long) - p - 1);
+        mask >>= (8 * sizeof(long) - p - 1);
+        mask >>= (p + 1 - n);
+        mask <<= (p + 1 - n);
+        x &= ~mask;
+        mask &= y << (p - n);
+        return x | mask;
+    }
+
