@@ -298,3 +298,24 @@ I tested this and the next two programs with a `bitshifting` program.
         return x | mask;
     }
 
+2-7
+---
+I tested this, the previous program, and the next program with a `bitshifting` program.
+
+.. code:: bash
+
+    git checkout 2-7; cc -std=c99 -Wall -o build/bitshifting src/bitshifting.c
+
+.. code:: c
+
+    unsigned long invert(unsigned long x, short p, short n)
+    {
+        unsigned long mask = p_to_n_bitmask(p, n);
+        mask &= x;
+        debug("mask is 0x%.16lx", mask);
+        x ^= mask;
+        debug("x    is 0x%.16lx", x);
+        mask = p_to_n_bitmask(p, n) & ~mask;
+        return x | mask;
+    }
+
