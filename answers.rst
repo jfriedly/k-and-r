@@ -319,3 +319,22 @@ I tested this, the previous program, and the next program with a `bitshifting` p
         return x | mask;
     }
 
+2-8
+---
+I tested this and the two previous programs with a `bitshifting` program.
+
+.. code:: bash
+
+    git checkout 2-8; cc -std=c99 -Wall -o build/bitshifting src/bitshifting.c
+
+.. code:: c
+
+    unsigned long rightrot(unsigned long x, short n)
+    {
+        n %= (8 * sizeof(long));
+        unsigned long mask = p_to_n_bitmask(n - 1, n);
+        mask &= x;
+        x >>= n;
+        mask <<= (8 * sizeof(long) - n);
+        return x | mask;
+    }
