@@ -338,3 +338,19 @@ I tested this and the two previous programs with a `bitshifting` program.
         mask <<= (8 * sizeof(long) - n);
         return x | mask;
     }
+
+2-9
+---
+The expression `x-1` sets the rightmost one bit in `x` to a zero, and all the zero bits after it to ones.
+Computing the AND of `x` and `x-1` will naturally leave all the bits after the rightmost one bit as zeroes, but will also zero out the rightmost one bit.
+I didn't test this exercise, I just googled after I wrote it to ensure that I had the answer right.
+
+.. code:: c
+
+    int bitcount(unsigned int x)
+    {
+        int b;
+        for (b = 0; x != 0; b++)
+            x &= x - 1;
+        return b;
+    }
