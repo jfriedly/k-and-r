@@ -354,3 +354,10 @@ I didn't test this exercise, I just googled after I wrote it to ensure that I ha
             x &= x - 1;
         return b;
     }
+
+2-10
+----
+
+.. code:: bash
+
+    git checkout 2-10; cc -std=c99 -Wall -o build/lower src/lower.c
