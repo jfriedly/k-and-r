@@ -361,3 +361,47 @@ I didn't test this exercise, I just googled after I wrote it to ensure that I ha
 .. code:: bash
 
     git checkout 2-10; cc -std=c99 -Wall -o build/lower src/lower.c
+
+
+Chapter 3
+=========
+
+3-1
+---
+
+.. code:: c
+
+    int fastbinsearch(int x, int v[], int n)
+    {
+        int low, high, mid;
+
+        low = 0;
+        high = n - 1;
+        while (low <= high) {
+            mid = (low + high) / 2;
+            if (x < v[mid])
+                high = mid - 1;
+            else
+                low = mid + 1;
+        }
+        if (high >= 0 && x == v[high])
+            return high;
+        else
+            return -1;
+    }
+
+To measure the difference in runtime, I wrote a program `binsearch` that performs binary search as many times as you ask it to using either the book's `binsearch` implementation, or my (not so) `fastbinsearch` implementation.
+The program always searches for a static number *x* in a static array of the *n* integers from zero to *n*.
+Each test was performed 100,000,000 times, because that took single-digit seconds to run, which seemed like a good compromise between testing efficiency and eliminating noisy data.
+
+Time testing with x = 11 in a 1024 value array, I found that the original version took a consistent 4.1 seconds to run the test 100,000,000 times, while the `fastbinsearch` version took a consistent 5.2 seconds.
+
+Time testing with x = 21 in a 1048576 value array, I found that the original version took a consistent 10.8 seconds, while the `fastbinsearch` version took a consistent 11.3 seconds.
+
+Time testing each with x = 1013 in a 1024 value array, I found that the original version took a consistent 4.9 seconds, while the `fastbinsearch` version took a consistent 5.2 seconds.
+
+Time testing each with x = 1023 in a 1024 value array, I found that the original version took a consistent 6.3 seconds, while the `fastbinsearch` version took a consistent 5.7 seconds.
+
+.. code:: bash
+
+    git checkout 3-1; cc -std=c99 -Wall -o build/binsearch src/binsearch.c
